@@ -1,0 +1,41 @@
+--- class module with new and super functions
+-- {modname}.new is used to instantiate new objects, a syntax familiar
+-- with other object oriented languages. {modname}.super is used to
+-- access superclass methods with a similar syntax to Python. "super"
+-- is also used to create subclasses. This technique requires only two
+-- functions on the module table with some repeated lines but distinct
+-- purposes. It is desirable that "new" eliminates the possibility of
+-- accidentally passing the module table to itself and polluting the
+-- state of the module. Similarly "super" protects the class table
+-- from being modified. 
+-- @classmod {modname}
+local {modname} = {{}}
+
+-- class table
+local {classname} = {{}}
+
+-- constructor method
+function {classname}:{classname}()
+end
+
+-- return a new object of class {classname}
+-- usage: abc = {modname}.new(a, b, c, d)
+function {modname}.new(...)
+  local self = {{}}
+  setmetatable(self, {{ __index = {classname} }})
+  self:{classname}(...)
+  return self
+end
+
+-- return protected class table
+-- usage: local Subclass = {modname}.super{a = 1, b = 2, c = 3}
+-- usage: function Subclass:Subclass(a, b)
+--          {modname}.super().{classname}(a, b, a + b, b * 2)
+--        end
+function {modname}.super(o)
+  local self = o or {}
+  setmetatable(self, {{ __index = {classname}})
+  return self
+end
+
+return {modname}
