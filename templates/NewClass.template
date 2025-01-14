@@ -1,0 +1,22 @@
+--- @module src.{classname}
+local {classname} = {}
+
+function {classname}:{classname}()
+   -- code
+end
+
+function {classname}:another_one()
+   self:some_method()
+   -- more code
+end
+
+local metatable = {
+   __call = function()
+      local self = {}
+      setmetatable(self, { __index = {classname} })
+      return self
+   end
+}
+setmetatable({classname}, metatable)
+
+return {classname}
