@@ -1,13 +1,13 @@
 --- a short description
 -- @classmod {modname}
-local {modname} = {{}}
+local {modname} = {}
 
 -- class table
-local {classname} = {{}}
+local {classname} = {}
 
 function {modname}.new(o)
-  local self = o or {{}}
-  setmetatable(self, {{ __index = {classname} }})
+  local self = o or {}
+  setmetatable(self, { __index = {classname} })
   return self
 end
 
