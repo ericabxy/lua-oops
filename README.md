@@ -6,15 +6,15 @@ The templates use the [module declaration outline](https://hisham.hm/2014/01/02/
 
 ## Installing
 
-The Makefile places templates in "~/Templates" and the formatter in "~/.local/share/nautilus/scripts". A Lua interpreter is required for the formatter to run.
+The Makefile places templates in "&tilde;/Templates" and the formatter in "&tilde;/.local/share/nautilus/scripts". A Lua interpreter is required for the formatter to run.
 
 ## Creating a Class
 
-Make a new document from "new&lowline;class.template". Name the template and run "Format Lua Template" on it. This creates a new ".lua" file with names derived from the template filename. The formatter can batch any number of templates in one command.
+Make a new document from "new&lowbar;class.template". Name the template and run "Format Lua Template" on it. This creates a new ".lua" file with names derived from the template filename. The formatter can batch any number of templates in one command.
 
 ## Creating a Subclass
 
-Make a new document from "new&lowline;subclass.template" and name the template. Run "Format Lua Template" on this file _and_ the ".lua" file of the module it will inherit from. This creates a new ".lua" file as above but with a class table that inherits the superclass table. The formatter can batch any number of subclass templates from one superclass.
+Make a new document from "new&lowbar;subclass.template" and name the template. Run "Format Lua Template" on this file _and_ the ".lua" file of the module it will inherit from. This creates a new ".lua" file as above but with a class table that inherits the superclass table. The formatter can batch any number of subclass templates from one superclass.
 
 ## Deriving Objects
 
