@@ -5,9 +5,13 @@ local {modname} = {}
 -- class table
 local {classname} = {}
 
-function {modname}.new(o)
-  local self = o or {}
+function {classname}:{classname}()
+end
+
+function {modname}.new(...)
+  local self = {}
   setmetatable(self, { __index = {classname} })
+  self:{classname}(...)
   return self
 end
 
